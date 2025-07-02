@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia FinMar</title>
+  <style>
+    /* Reset simplu */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header & navigație */
+    header { background: #004080; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: bold; }
+    nav { display: flex; align-items: center; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul li a { font-size: 1rem; padding: 0.5rem 1rem; transition: background 0.3s; }
+    nav ul li a:hover { background: rgba(255,255,255,0.2); border-radius: 4px; }
+    .search-icon { font-size: 1.2rem; margin-left: 1rem; cursor: pointer; }
+
+    /* Hero personalizat */
+    .hero { display: flex; flex-wrap: wrap; background: #fff; padding: 3rem 2rem; align-items: center; }
+    .hero .text-container, .hero .image-container { flex: 1 1 300px; padding: 1rem; }
+    .hero .text-container h1 { font-size: 2rem; margin-bottom: 1rem; color: #004080; }
+    .hero .text-container form { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .hero .text-container input[type="email"] { flex: 1; padding: 0.7rem; border: 1px solid #ccc; border-radius: 4px; }
+    .hero .text-container button { background: #ffcc00; color: #004080; padding: 0.7rem 1.2rem; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    .hero .image-container img { width: 100%; height: auto; border-radius: 8px; }
+
+    /* Slider 360 garde */
+    .slider-section { padding: 3rem 2rem; background: #f9f9f9; }
+    .slider-section h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; color: #004080; }
+    .slider-container { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
+    .slide { flex: 0 0 300px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; scroll-snap-align: start; transition: transform 0.3s; }
+    .slide:hover { transform: translateY(-5px); }
+    .slide img { width: 100%; height: 180px; object-fit: cover; }
+    .slide-content { padding: 1rem; }
+    .slide-content h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #004080; }
+    .slide-content p { font-size: 0.9rem; margin-bottom: 1rem; }
+    .slide-content button { background: #004080; color: #fff; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem; }
+
+    /* Footer */
+    footer { background: #333; color: #ccc; text-align: center; padding: 1rem 2rem; font-size: 0.9rem; }
+    footer a { color: #ffcc00; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Academia FinMar</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#faqs">FAQ's</a></li>
+        <li><a href="#contact">Contacts</a></li>
+      </ul>
+      <span class="search-icon">&#128269;</span>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="text-container">
+      <h1>Smart marketing for real results.<br>Grow as a specialist with every step!</h1>
+      <form action="#" method="post">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit">Apply now!</button>
+      </form>
+    </div>
+    <div class="image-container">
+      <img src="hero-image.jpg" alt="Smart Marketing">
+    </div>
+  </section>
+
+  <section id="360-garde" class="slider-section">
+    <h2>360 Garde</h2>
+    <div class="slider-container">
+      <div class="slide">
+        <img src="slider1.jpg" alt="Curs 1">
+        <div class="slide-content">
+          <h3>Curs Finanțe Avansate</h3>
+          <p>Analiză detaliată a piețelor financiare.</p>
+          <button>Vezi detalii</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="slider2.jpg" alt="Curs 2">
+        <div class="slide-content">
+          <h3>Marketing Digital</h3>
+          <p>Strategii avansate și studii de caz.</p>
+          <button>Vezi detalii</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="slider3.jpg" alt="Curs 3">
+        <div class="slide-content">
+          <h3>Investiții și Portofoliu</h3>
+          <p>Ghid complet pentru începători.</p>
+          <button>Vezi detalii</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="slider4.jpg" alt="Curs 4">
+        <div class="slide-content">
+          <h3>SEO & Content Marketing</h3>
+          <p>Optimizare și creștere organică.</p>
+          <button>Vezi detalii</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="slider5.jpg" alt="Curs 5">
+        <div class="slide-content">
+          <h3>Branding Strategic</h3>
+          <p>Construirea unei identități puternice.</p>
+          <button>Vezi detalii</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Academia FinMar. Toate drepturile rezervate.</p>
+  </footer>
+</body>
+</html>
