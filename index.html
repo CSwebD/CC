@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academia FinMak</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Adviser</title>
   <style>
-    /* Reset simplu */
+    /* Reset and common styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
     a { text-decoration: none; color: inherit; }
 
-    /* Header & navigație */
-    header { background: #004080; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.8rem; font-weight: bold; }
-    nav { display: flex; align-items: center; }
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav ul li a { font-size: 1rem; padding: 0.5rem 1rem; transition: background 0.3s; }
+    /* Header & navigation */
+    header { background: #004080; color: #fff; padding: 0.8rem 1rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.6rem; font-weight: bold; flex-shrink: 0; }
+    nav { flex: 1; margin-left: 1rem; }
+    nav ul { list-style: none; display: flex; gap: 1rem; flex-wrap: nowrap; overflow-x: auto; }
+    nav ul::-webkit-scrollbar { display: none; }
+    nav ul li a { font-size: 0.9rem; padding: 0.4rem 0.8rem; transition: background 0.3s; white-space: nowrap; }
     nav ul li a:hover { background: rgba(255,255,255,0.2); border-radius: 4px; }
-    .search-icon { font-size: 1.2rem; margin-left: 1rem; cursor: pointer; }
+    .search-icon { font-size: 1.2rem; margin-left: 1rem; cursor: pointer; flex-shrink: 0; }
 
-    /* Hero personalizat */
+    /* Hero */
     .hero { display: flex; flex-wrap: wrap; background: #fff; padding: 3rem 2rem; align-items: center; }
-    .hero .text-container, .hero .image-container { flex: 1 1 300px; padding: 1rem; }
+    .hero .text-container { flex: 1 1 300px; padding: 1rem; }
     .hero .text-container h1 { font-size: 2rem; margin-bottom: 1rem; color: #004080; }
     .hero .text-container form { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .hero .text-container input[type="email"] { flex: 1; padding: 0.7rem; border: 1px solid #ccc; border-radius: 4px; }
     .hero .text-container button { background: #ffcc00; color: #004080; padding: 0.7rem 1.2rem; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    .hero .image-container { flex: 1 1 300px; padding: 1rem; }
     .hero .image-container img { width: 100%; height: auto; border-radius: 8px; }
 
-    /* Slider 360 garde */
+    /* Slider 360 Garde */
     .slider-section { padding: 3rem 2rem; background: #f9f9f9; }
     .slider-section h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; color: #004080; }
     .slider-container { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
@@ -40,6 +42,22 @@
     .slide-content p { font-size: 0.9rem; margin-bottom: 1rem; }
     .slide-content button { background: #004080; color: #fff; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem; }
 
+    /* Advantages Section */
+    .advantages-section { padding: 3rem 2rem; background: #fff; }
+    .advantages-section h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #004080; }
+    .advantages-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .advantage-card { background: #f9f9f9; border-radius: 8px; padding: 1.5rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .advantage-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #004080; }
+    .advantage-card p { font-size: 0.95rem; }
+
+    /* FAQ Section */
+    .faqs-section { padding: 3rem 2rem; background: #fff; }
+    .faqs-section h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; color: #004080; }
+    details { margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; padding: 0.5rem; }
+    summary { font-weight: bold; cursor: pointer; }
+    details[open] summary { color: #004080; }
+    details p { margin: 0.5rem 0 0 1rem; }
+
     /* Footer */
     footer { background: #333; color: #ccc; text-align: center; padding: 1rem 2rem; font-size: 0.9rem; }
     footer a { color: #ffcc00; }
@@ -47,7 +65,7 @@
 </head>
 <body>
   <header>
-    <div class="logo">Smart Advicer</div>
+    <div class="logo">Smart Adviser</div>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -56,20 +74,20 @@
         <li><a href="#faqs">FAQ's</a></li>
         <li><a href="#contact">Contacts</a></li>
       </ul>
-      <span class="search-icon">&#128269;</span>
     </nav>
+    <span class="search-icon">&#128269;</span>
   </header>
-
+  
   <section class="hero">
     <div class="text-container">
       <h1>Smart marketing for real results.<br>Grow as a specialist with every step!</h1>
       <form action="#" method="post">
-        <input type="email" name="email" placeholder="Your email address" required>
+        <input type="email" name="email" placeholder="Your email address" required />
         <button type="submit">Apply now!</button>
       </form>
     </div>
     <div class="image-container">
-      <img src="hero-image.jpg" alt="Smart Marketing">
+      <img src="hero-image.png" alt="Smart Marketing" />
     </div>
   </section>
 
@@ -77,50 +95,96 @@
     <h2>360 Garde</h2>
     <div class="slider-container">
       <div class="slide">
-        <img src="slider1.jpg" alt="Curs 1">
+        <img src="slider1.jpeg" alt="Advanced Finance Course" />
         <div class="slide-content">
-          <h3>Curs Finanțe Avansate</h3>
-          <p>Analiză detaliată a piețelor financiare.</p>
-          <button>Vezi detalii</button>
+          <h3>Advanced Financial Analysis</h3>
+          <p>Dive deep into market trends and financial reporting.</p>
+          <button>View Details</button>
         </div>
       </div>
       <div class="slide">
-        <img src="slider2.jpg" alt="Curs 2">
+        <img src="slider2.png" alt="Digital Marketing Course" />
         <div class="slide-content">
-          <h3>Marketing Digital</h3>
-          <p>Strategii avansate și studii de caz.</p>
-          <button>Vezi detalii</button>
+          <h3>Digital Marketing Strategies</h3>
+          <p>Master SEO, PPC, and social media campaigns.</p>
+          <button>View Details</button>
         </div>
       </div>
       <div class="slide">
-        <img src="slider3.jpg" alt="Curs 3">
+        <img src="slider3.jpg" alt="Investment Course" />
         <div class="slide-content">
-          <h3>Investiții și Portofoliu</h3>
-          <p>Ghid complet pentru începători.</p>
-          <button>Vezi detalii</button>
+          <h3>Investment Essentials</h3>
+          <p>Learn portfolio building and risk management.</p>
+          <button>View Details</button>
         </div>
       </div>
       <div class="slide">
-        <img src="slider4.jpg" alt="Curs 4">
+        <img src="slider4.jpg" alt="SEO and Content Marketing" />
         <div class="slide-content">
           <h3>SEO & Content Marketing</h3>
-          <p>Optimizare și creștere organică.</p>
-          <button>Vezi detalii</button>
+          <p>Boost organic growth with targeted content.</p>
+          <button>View Details</button>
         </div>
       </div>
       <div class="slide">
-        <img src="slider5.jpg" alt="Curs 5">
+        <img src="slider5.jpg" alt="Branding Course" />
         <div class="slide-content">
-          <h3>Branding Strategic</h3>
-          <p>Construirea unei identități puternice.</p>
-          <button>Vezi detalii</button>
+          <h3>Strategic Branding</h3>
+          <p>Create a memorable brand identity.</p>
+          <button>View Details</button>
         </div>
       </div>
     </div>
   </section>
 
+  <section id="advantages" class="advantages-section">
+    <h2>Why Upskill in Marketing & Finance?</h2>
+    <div class="advantages-container">
+      <div class="advantage-card">
+        <h3>Boost Your Career Prospects</h3>
+        <p>Acquire in-demand skills that open doors to higher-paying roles and leadership positions.</p>
+      </div>
+      <div class="advantage-card">
+        <h3>Stay Competitive</h3>
+        <p>Keep up with industry trends and technologies to maintain a competitive edge.</p>
+      </div>
+      <div class="advantage-card">
+        <h3>Expand Your Network</h3>
+        <p>Connect with peers and industry experts through advanced courses and events.</p>
+      </div>
+      <div class="advantage-card">
+        <h3>Increase ROI for Employers</h3>
+        <p>Implement efficient strategies that drive measurable results and optimize budgets.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faqs" class="faqs-section">
+    <h2>FAQs: Marketing and Finance</h2>
+    <details>
+      <summary>How do I get started with digital marketing?</summary>
+      <p>Begin with foundational courses on SEO and social media, then practice through real projects.</p>
+    </details>
+    <details>
+      <summary>What financial strategies are suitable for beginners?</summary>
+      <p>Focus on understanding budgeting, saving, and passive investments.</p>
+    </details>
+    <details>
+      <summary>How do I choose the right finance course?</summary>
+      <p>Pick based on your current knowledge level and long-term goals.</p>
+    </details>
+    <details>
+      <summary>What is the importance of ROI analysis in marketing?</summary>
+      <p>ROI helps measure campaign effectiveness and optimize budget allocation.</p>
+    </details>
+    <details>
+      <summary>Can I earn internationally recognized certifications?</summary>
+      <p>Yes, many platforms offer accredited certificates in marketing and finance.</p>
+    </details>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Smart Advicer. Toate drepturile rezervate.</p>
+    <p>&copy; 2025 Smart Adviser. All rights reserved.</p>
   </footer>
 </body>
 </html>
